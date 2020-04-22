@@ -33,13 +33,6 @@ public class DesignTacoController {
                 new Ingredient("SRCR", "Sour Cream", Type.SAUCE)
         );
 
-/*
-        Type[] types = Ingredient.Type.values();
-        for (Type type : types) {
-            model.addAttribute(type.toString().toLowerCase(), filterByType(ingredients, type));
-        }
-*/
-
         Stream.of(Ingredient.Type.values())
                 .forEach(type -> model.addAttribute(type.toString().toLowerCase(), filterByType(ingredients, type)));
 
